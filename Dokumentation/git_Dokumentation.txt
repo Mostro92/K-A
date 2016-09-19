@@ -31,3 +31,7 @@ Aktualisieren eines Projektes
 2. git add . -A 
 3. git commit -am "Text zur charaktarisierung"
 4. git push origin master
+
+Speichern des Passwortes
+1.git config --global credential.helper cache
+2.git config --global credential.helper 'cache --timeout=3600'
