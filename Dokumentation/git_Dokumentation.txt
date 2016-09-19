@@ -18,7 +18,7 @@ git init
 3. Datei erzeugen zum testen
 touch test.txt
 4. Datei zum Repository hinzufügen
-git add +A
+git add . -A
 5. Datei commiten
 git commit -m "first commit"
 6. Das lokale Repos mit dem Remote Repos verbinden
