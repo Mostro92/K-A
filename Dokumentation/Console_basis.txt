@@ -1,0 +1,16 @@
+Arbeiten auf der Console
+
+Die Standart-console unter Linus ist die bash (Bourne Again Shell).
+Es gibt noch eine Vielzahl von anderen Implementationen. Bekannt und sehr beliebt ist die z-shell.
+
+Die Console dient der Verwaltung des Systems.
+Es gibt drei verschiedene Arten von Befehlen,die mit dem Befehl type speziefiziert werden können.
+a. Systembefehle
+	type rm
+		Ausgabe: Pfad zum Systemprogramm rm: /bin/rm
+
+b.Basisbefehle: Funktionen,die für die Bash geschrieben sind
+	type cd
+
+c. Alias-Befehle: Befehle mit Optionen, die in der .bashrc definiert wurden
+	type ls
