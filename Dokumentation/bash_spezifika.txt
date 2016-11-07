@@ -21,13 +21,13 @@ Bash-Operator:
 
 	cat > <dateiname>
 			Eingabe von beliebigen Text
-			strg + d beendet die Eingabe und speichert diese in die Datei 			<dateiname>
+			strg + d beendet die Eingabe und speichert diese in die Datei <dateiname>
 
 	Links
 		Hardlink
 			ln <dateiname> <dateiname-lnk>
 				erzeugt eine neue Referenz auf eine Datei in der File-Tabelle
-				der Festplatte
+				der Festplatte. Jeden Datei hat mindestens einen Hardlink.
 
 		Softlink
 			ln -s <verzeichnisname> <verzeichnisname-neu>
