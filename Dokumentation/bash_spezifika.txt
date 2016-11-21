@@ -33,3 +33,22 @@ Bash-Operator:
 			ln -s <verzeichnisname> <verzeichnisname-neu>
 			Da Hardlinks nur für Dateien möglich sind, gibt es den softlink für verzeichnisse.
 			Es wird eine neue Datei erstellt, deren Inhalt der Verweis auf das Verzeichnis ist
+
+Variablen auf der konsole
+	
+	Definition:
+		Variablenname aus Buchstaben, keine Zahlen als 1. Buchstaben, keine sonderzeichen, dann Zuweisungsoperator ohne Leerzeichen, dann Wert
+			var="Zeichenkette"
+
+	Verwendung:
+		$ + Variablenname
+			echo $var
+
+
+Kommandosubstitution mit Backticks
+
+	var=`ls`
+		speichert in der Variable var die Ausgabe des Befehls
+
+	echo $var
+		gibt das Ergebnis des Befehls aus
