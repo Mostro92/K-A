@@ -1,0 +1,18 @@
+Erstellen sie ein Script, das einen Parameter entgegennimmt und checkt ob es eine Datei gibt, die so heißt wie der übergebene Parameter.
+Aufruf: ./test.sh test.txt
+Erweiterung: Die Eingabeaufforderung soll so lange gezeigt werden, bis der benutzer ein q eingibt, oder einen vorhandenen Dateinamen.
+
+if [[ $1 ]]
+then
+	abfrage=$1
+else
+read -p "Ihre Eingabe:" abfrage
+echo "Die Eingabe lautet: $abfrage"
+fi
+if [[ -e $abfrage ]]
+then
+	echo "Der Eintrag ist vorhanden: $abfrage"
+else
+	echo "Ist nicht vorhanden"
+
+fi
