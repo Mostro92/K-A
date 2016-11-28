@@ -85,3 +85,49 @@
 #Wird etwas anderes als eine Zahl eingegeben gibt das Programm aus: 
 #'Falsche Eingabe: xxx kann nicht addiert werden. Geben Sie ausschließlich Zahlen ein.'
 
+
+
+
+#while true
+# do
+#    read -p "Zahl1 " number1
+#    read -p "Zahl2 " number2
+#    PS3="Rechenoption "
+#    select ans in add subtract multiply divide; do
+#        case $ans in 
+#            add) op='+' ; break ;;
+#            subtract) op='-' ; break ;;
+#            multiply) op='*' ; break ;;
+#            divide) op='/' ; break ;;
+#            *) echo "invalid response" ;;
+#        esac
+#    done
+#    ans=$(echo "$number1 $op $number2" | bc -l)
+#    printf "%s %s %s = %s\n\n" "$number1" "$op" "$number2" "$ans"
+#done
+
+
+#exit 0
+
+read -p "Geben Sie die 1. Zahl ein" Zahl1
+
+if [[ `echo "$zahl1" | grep [[:digit:]]` ]]
+	then
+	echo "Die 2.Zahl ist eine $zahl1"
+else
+	echo "Falsche Eingabe"
+fi
+
+ergebnis=zahl1
+zaehler=1
+read -p "Geben sie eine weitere Zahl ein, oder beenden Sie mit Exit: " eingabe
+while [[ $eingabe -ne "exit" ]]; do
+	((zaehler ++))
+	ergebnis=$((ergebnis+eingabe))
+	echo "Bisher wurde $zaehler Zahlen eingegeben. Das Zwischenergebnis lautet: $ergebnis"
+	read -p "Geben sie eine weitere Zahl ein, oder beenden sie mit exit." eingabe
+done
+
+echo "Das ergebnis lautet: $ergebnis"
+
+###################################################################################
