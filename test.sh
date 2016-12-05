@@ -108,26 +108,73 @@
 
 
 #exit 0
+###################################################################################
+#read -p "Geben Sie die 1. Zahl ein" Zahl1
 
-read -p "Geben Sie die 1. Zahl ein" Zahl1
+#if [[ `echo "$zahl1" | grep [[:digit:]]` ]]
+#	then
+#	echo "Die 2.Zahl ist eine $zahl1"
+#else
+#	echo "Falsche Eingabe"
+#fi
 
-if [[ `echo "$zahl1" | grep [[:digit:]]` ]]
-	then
-	echo "Die 2.Zahl ist eine $zahl1"
-else
-	echo "Falsche Eingabe"
-fi
+#ergebnis=zahl1
+#zaehler=1
+#read -p "Geben sie eine weitere Zahl ein, oder beenden Sie mit Exit: " eingabe
+#while [[ $eingabe -ne "exit" ]]; do
+#	((zaehler ++))
+#	ergebnis=$((ergebnis+eingabe))
+#	echo "Bisher wurde $zaehler Zahlen eingegeben. Das Zwischenergebnis lautet: $ergebnis"
+#	read -p "Geben sie eine weitere Zahl ein, oder beenden sie mit exit." eingabe
+#done
 
-ergebnis=zahl1
-zaehler=1
-read -p "Geben sie eine weitere Zahl ein, oder beenden Sie mit Exit: " eingabe
-while [[ $eingabe -ne "exit" ]]; do
-	((zaehler ++))
-	ergebnis=$((ergebnis+eingabe))
-	echo "Bisher wurde $zaehler Zahlen eingegeben. Das Zwischenergebnis lautet: $ergebnis"
-	read -p "Geben sie eine weitere Zahl ein, oder beenden sie mit exit." eingabe
-done
-
-echo "Das ergebnis lautet: $ergebnis"
+#echo "Das ergebnis lautet: $ergebnis"
 
 ###################################################################################
+#bogner lösung---------------------------------------------------------------------
+
+#!/bin/bash
+#zahl=0
+#counter=1
+#while [[ 1 ]]
+#do
+#	read -p "Ihre $counter . Eingabe: " val
+#
+#	if [[ $val = "exit" ]]; then
+#		echo "Endergebnis: $zahl. Das Programm wurde beendet."
+#		break
+#	elif [[ $val -gt 0 ]]; then
+#		counter=$((counter + 1))
+#		zahl=$((zahl + val))
+#		echo $zahl
+#	else
+#		echo "Falsche Eingabe: $val kann nicht addiert werden. Geben Sie ausschließlich Zahlen ein."
+#	fi
+#done
+###################################################################################
+#3.
+#Speichern sie das Datum in einer Variable
+#Speichern sie den ersten Parameter nach der Eingabeaufforderung in die Variable topic
+#Erzeugen sie einen Dateinamen, nach dem folgenden Muster: /home/theo/<parameter>
+#notes.txt. Nutzen Sie die Variable topic und die systemimmanente Variable für das
+#Home-Verzeichnis des aktuellen Users.
+#Erzeugen Sie die Eingabeaufforderung: "Notiz:" und speichern Sie die Eingabe das Users
+#in der Datei mit Datumsangabe
+
+
+if [[ -z $1 ]]; then
+	
+	echo "Sie haben kein zielordner angegeben."
+	
+else
+	datum=$(date +"%d.%m.%Y.%H.%M")
+
+	read -p "Notiz: " notiz
+	dir="$Home/$topic"
+	file="$dir/notes.txt"
+	cd 
+	topic=$1
+	mkdir -p $dir
+	printf "$datum: $notiz \n" >> $file
+fi
+

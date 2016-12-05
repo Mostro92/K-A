@@ -45,40 +45,41 @@ Vorraussetzungen
 
 		#!/bin/bash
 
-trinken='Whisky und Zigarre'
-echo $0
-echo $1
+Aufgabe 1:
+	trinken='Whisky und Zigarre'
+	echo $0
+	echo $1
 
-echo `date`
+	echo `date`
 
-echo $(date)
+	echo $(date)
 
-remove='rm text.txt'
-$remove
+	remove='rm text.txt'
+	$remove
 
-string_1='Heia'
-string_2=Popeia
-string="$(string_1) $(string_2) was raschelt im stroh?"
-echo "$string_1 $string_2 aber im Heu"
-echo $string
-~             
+	string_1='Heia'
+	string_2=Popeia
+	string="$(string_1) $(string_2) was raschelt im stroh?"
+	echo "$string_1 $string_2 aber im Heu"
+	echo $string
+             
 
 
-IF Anweisung
+IF Anweisung:
 
-read -p "Ihre Eingabe:" var_name
+	read -p "Ihre Eingabe:" var_name
 
-echo "Die Eingabe lautet: $var_name"
+	echo "Die Eingabe lautet: $var_name"
 
-if [[ $var_name = "q" ]]
-then
+	if [[ $var_name = "q" ]]
+	then
         echo "ist ein prima q"
-elif [[ $var_name = "m" ]]
-then
+	elif [[ $var_name = "m" ]]	
+	then
         echo "Jo, ein m"
-else
+	else
         echo "irgendwas anderes"
-fi
+	fi
 
 
 Schleifen:
