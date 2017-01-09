@@ -160,7 +160,7 @@
 #Home-Verzeichnis des aktuellen Users.
 #Erzeugen Sie die Eingabeaufforderung: "Notiz:" und speichern Sie die Eingabe das Users
 #in der Datei mit Datumsangabe
-
+# -z = Variable =0 (leer)
 
 if [[ -z $1 ]]; then
 	
@@ -168,12 +168,11 @@ if [[ -z $1 ]]; then
 	
 else
 	datum=$(date +"%d.%m.%Y.%H.%M")
-
+	topic=$1
 	read -p "Notiz: " notiz
-	dir="$Home/$topic"
+	dir="$HOME/$topic"
 	file="$dir/notes.txt"
 	cd 
-	topic=$1
 	mkdir -p $dir
 	printf "$datum: $notiz \n" >> $file
 fi
